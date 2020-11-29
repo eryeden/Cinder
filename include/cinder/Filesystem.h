@@ -28,7 +28,8 @@
 
 
 #if defined( CINDER_UWP ) || ( defined( _MSC_VER ) && ( _MSC_VER >= 1900 ) )
-	#include <filesystem>
+	#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
+	#include <experimental/filesystem>
 #else
 	#define BOOST_FILESYSTEM_VERSION 3
 	#define BOOST_FILESYSTEM_NO_DEPRECATED
